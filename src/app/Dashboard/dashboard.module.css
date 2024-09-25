@@ -1,10 +1,10 @@
 .address {
-  max-height: 600px;
+  max-height: 670px;
 }
 
 .chatBox {
   background-color: #d7f5dc;
-  height: 450px;
+  height: 50vh;
   overflow-y: auto;
 }
 .comprenshiveAddress {
@@ -63,9 +63,3 @@
     border-radius: 12px; 
 
 }
-
-
-
-
-
-

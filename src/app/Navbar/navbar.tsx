@@ -26,15 +26,7 @@ export default function Navbar() {
               </div>
 
               {/* Title */}
-              <div className="ms-5 d-flex align-items-center mt-5 px-5 ">
-                <Image
-                  src="/check.png"
-                  alt="Dropdown Icon"
-                  width={25}
-                  height={25}
-                />
-                <h5 className="mt-1 ms-4">Comprehensive view of All Address</h5>
-              </div>
+            
             </div>
 
             {/* Right Section */}

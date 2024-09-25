@@ -8,7 +8,7 @@ import { SetStateAction, useState } from "react";
 
 export default function Dashboard() {
   const [currentPage, setCurrentPage] = useState(1);
-  const addressesPerPage = 15;
+  const addressesPerPage = 10;
   // Get current addresses for the current page
   const indexOfLastAddress = currentPage * addressesPerPage;
   const indexOfFirstAddress = indexOfLastAddress - addressesPerPage;
@@ -161,47 +161,63 @@ export default function Dashboard() {
             </div>
           </div>
 
-          <div className="container-fluid ms-4 me-4">
+          <div className="container-fluid ms-2 me-3">
+            <div>
+            
+            <div className="row g-3">
+  {/* Align the text and image above the first column */}
+  <div className="col-12 d-flex  px-0">
+    <Image src="/check.png" alt="Dropdown Icon" width={25} height={25} />
+    <h5 className="ms-2">Comprehensive view of All Address</h5>
+  </div>
 
-            <div className="">
-            <div className="row g-3"> {/* Apply grid gap here */}
-    
-    <div className="col-lg-3 col-md-6 col-sm-12"> {/* Each column */}
-      <div className={`d-flex justify-content-between align-items-center p-3 ${styles.messageDelivered}`}>
-        <span>Message Delivered</span>
-        <span className="badge bg-light text-dark rounded-circle d-flex justify-content-center align-items-center p-3">200</span>
-      </div>
+  {/* First column: Message Delivered */}
+  <div className="col-lg-3 col-md-6 col-sm-12">
+    <div className={`d-flex justify-content-between align-items-center p-3 ${styles.messageDelivered}`}>
+      <span>Message Delivered</span>
+      <span className="badge bg-light text-dark rounded-circle d-flex justify-content-center align-items-center p-3">
+        200
+      </span>
     </div>
-    
-    <div className="col-lg-3 col-md-6 col-sm-12">
-      <div className={`d-flex justify-content-between align-items-center p-3 ${styles.messageResponse}`}>
-        <span>Message Response</span>
-        <span className="badge bg-light text-dark rounded-circle d-flex justify-content-center align-items-center p-3">200</span>
-      </div>
-    </div>
-    
-    <div className="col-lg-3 col-md-6 col-sm-12">
-      <div className={`d-flex justify-content-between align-items-center p-3 text-left ${styles.call}`}>
-        <span>Call</span>
-        <span className="badge bg-light text-dark rounded-circle d-flex justify-content-center align-items-center p-3">200</span>
-      </div>
-    </div>
-    
-    <div className="col-lg-3 col-md-6 col-sm-12">
-      <div className={`d-flex justify-content-between align-items-center p-3 text-left ${styles.callResponse}`}>
-        <span>Call Response</span>
-        <span className="badge bg-light text-dark rounded-circle d-flex justify-content-center align-items-center p-3">200</span>
-      </div>
-    </div>
+  </div>
 
+  {/* Second column: Message Response */}
+  <div className="col-lg-3 col-md-6 col-sm-12">
+    <div className={`d-flex justify-content-between align-items-center p-3 ${styles.messageResponse}`}>
+      <span>Message Response</span>
+      <span className="badge bg-light text-dark rounded-circle d-flex justify-content-center align-items-center p-3">
+        200
+      </span>
+    </div>
+  </div>
+
+  {/* Third column: Call */}
+  <div className="col-lg-3 col-md-6 col-sm-12">
+    <div className={`d-flex justify-content-between align-items-center p-3 text-left ${styles.call}`}>
+      <span>Call</span>
+      <span className="badge bg-light text-dark rounded-circle d-flex justify-content-center align-items-center p-3">
+        200
+      </span>
+    </div>
+  </div>
+
+  {/* Fourth column: Call Response */}
+  <div className="col-lg-3 col-md-6 col-sm-12">
+    <div className={`d-flex justify-content-between align-items-center p-3 text-left ${styles.callResponse}`}>
+      <span>Call Response</span>
+      <span className="badge bg-light text-dark rounded-circle d-flex justify-content-center align-items-center p-3">
+        200
+      </span>
+    </div>
   </div>
 </div>
 
+            </div>
 
             <div className="">
               <div className="text-left">
                 <div className="row">
-                  <div className="col-lg-3 col-md-6 col-sm-12 ">
+                  <div className="col-lg-3 col-md-12 col-sm-12 ">
                     <div className="d-flex mt-4">
                       <span className="me-4">
                         <Image
@@ -272,100 +288,108 @@ export default function Dashboard() {
                             <p className="mb-0">{address.fullAddress}</p>
                           </div>
                         ))}
-                      <Pagination
-                        totalItems={addresses.length}
-                        itemsPerPage={addressesPerPage}
-                        currentPage={currentPage}
-                        paginate={paginate}
-                      />
-                    </div>
+                        <Pagination
+                          totalItems={addresses.length}
+                          itemsPerPage={addressesPerPage}
+                          currentPage={currentPage}
+                          paginate={paginate}
+                        />
                       </div>
-
+                    </div>
                   </div>
 
                   <div className="col-9">
                     <p className="mt-4">Analytic data of selected Address</p>
                     <div className="">
                       <div className="d-flex flex-wrap">
-
-                      
-                      <div className={`d-flex col-12 col-md-5 col-lg-3
-                        justify-content-between align-items-center   px-4 py-3  mb-4 text-left ${styles.AnlyDelivered}`}>
-                        <span>Message Delivered</span>
-                        <span className="badge bg-light text-primary rounded-circle d-flex justify-content-center align-items-center p-2">
-                          5
-                        </span>
+                        <div
+                          className={`d-flex col-12 col-md-5 col-lg-3
+                        justify-content-between align-items-center   px-4 py-3  mb-4 text-left ${styles.AnlyDelivered}`}
+                        >
+                          <span>Message Delivered</span>
+                          <span className="badge bg-light text-primary rounded-circle d-flex justify-content-center align-items-center p-2">
+                            5
+                          </span>
+                        </div>
+                        <div
+                          className={`d-flex col-12 col-md-5 col-lg-3 justify-content-between align-items-center  p-3 mb-4 text-left ${styles.AnlyResponse}`}
+                        >
+                          <span>Message Response</span>
+                          <span className="badge bg-light text-primary rounded-circle d-flex justify-content-center align-items-center p-2">
+                            5
+                          </span>
+                        </div>
+                        <div
+                          className={`d-flex col-12 col-md-5 col-lg-3 justify-content-between align-items-center  p-3 mb-4 text-left ${styles.anlyCall}`}
+                        >
+                          <span>Call</span>
+                          <span className="badge bg-light text-primary rounded-circle d-flex justify-content-center align-items-center p-2">
+                            5
+                          </span>
+                        </div>
+                        <div
+                          className={`d-flex col-12 col-md-5 col-lg-3 justify-content-between align-items-center  p-3 mb-4 text-left ${styles.AnlyCallRes}`}
+                        >
+                          <span>Call</span>
+                          <span className="badge bg-light text-primary rounded-circle d-flex justify-content-center align-items-center p-2">
+                            5
+                          </span>
+                        </div>
                       </div>
-                      <div className={`d-flex col-12 col-md-5 col-lg-3 justify-content-between align-items-center  p-3 mb-4 text-left ${styles.AnlyResponse}`}>
-                        <span>Message Response</span>
-                        <span className="badge bg-light text-primary rounded-circle d-flex justify-content-center align-items-center p-2">
-                          5
-                        </span>
-                      </div>
-                      <div className={`d-flex col-12 col-md-5 col-lg-3 justify-content-between align-items-center  p-3 mb-4 text-left ${styles.anlyCall}`}>
-                        <span>Call</span>
-                        <span className="badge bg-light text-primary rounded-circle d-flex justify-content-center align-items-center p-2">
-                          5
-                        </span>
-                      </div>
-                      <div className={`d-flex col-12 col-md-5 col-lg-3 justify-content-between align-items-center  p-3 mb-4 text-left ${styles.AnlyCallRes}`}>
-                        <span>Call</span>
-                        <span className="badge bg-light text-primary rounded-circle d-flex justify-content-center align-items-center p-2">
-                          5
-                        </span>
-                      </div>
-                      </div>
-                    </div>                   
-                     <div className="d-flex gap-3 justify-content-between align-items-center">
+                    </div>
+                    <div className="d-flex gap-3 justify-content-between align-items-center">
                       {/* Left section with dropdown icon and text */}
                       <div className="d-flex flex-wrap align-items-center gap-2">
-  {/* Bookmark Icon */}
-  <span>
-    <Image
-      alt="Bookmark Icon"
-      width={20}
-      height={20}
-      src="/Vector.png"
-    />
-  </span>
+                        {/* Bookmark Icon */}
+                        <span>
+                          <Image
+                            alt="Bookmark Icon"
+                            width={20}
+                            height={20}
+                            src="/Vector.png"
+                          />
+                        </span>
 
-  {/* Text "Conversation From" */}
-  <span className="text-nowrap">Conversation From</span>
+                        {/* Text "Conversation From" */}
+                        <span className="text-nowrap">Conversation From</span>
 
-  {/* Selected Number */}
-  <span className="ms-2 text-nowrap">{selectedNumber}</span>
+                        {/* Selected Number */}
+                        <span className="ms-2 text-nowrap">
+                          {selectedNumber}
+                        </span>
 
-  {/* Dropdown Trigger */}
-  <div className="dropdown ms-2">
-    <span
-      role="button"
-      onClick={() => setIsOpen(!isOpen)}
-    >
-      <Image
-        src="/dropdownicon.svg"
-        alt="Dropdown Icon"
-        width={22}
-        height={10}
-      />
-    </span>
+                        {/* Dropdown Trigger */}
+                        <div className="dropdown ms-2">
+                          <span
+                            role="button"
+                            onClick={() => setIsOpen(!isOpen)}
+                          >
+                            <Image
+                              src="/dropdownicon.svg"
+                              alt="Dropdown Icon"
+                              width={22}
+                              height={10}
+                            />
+                          </span>
 
-    {/* Dropdown Menu */}
-    <ul className={`dropdown-menu ${isOpen ? "show" : ""}`}>
-      {numbers.map((number, index) => (
-        <li key={index}>
-          <a
-            href="#"
-            className="dropdown-item"
-            onClick={() => handleSelect(number)}
-          >
-            {number}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-</div>
-
+                          {/* Dropdown Menu */}
+                          <ul
+                            className={`dropdown-menu ${isOpen ? "show" : ""}`}
+                          >
+                            {numbers.map((number, index) => (
+                              <li key={index}>
+                                <a
+                                  href="#"
+                                  className="dropdown-item"
+                                  onClick={() => handleSelect(number)}
+                                >
+                                  {number}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
 
                       {/* Right section with search bar and icon below */}
                       <div className="text-center me-2">
